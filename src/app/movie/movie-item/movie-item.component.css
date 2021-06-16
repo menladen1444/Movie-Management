@@ -1,0 +1,15 @@
+.name{
+    color:#2ed296;
+    font-size:21px;
+    margin:0px;
+    margin-bottom: 10px;
+    padding:0px;
+    font-weight: bolder;
+
+}
+.text{
+    color: #467698;
+    margin: 4px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}

@@ -1,0 +1,27 @@
+<p *ngIf="movies.length < 1 && !isFetching">No movies available!</p>
+<div *ngIf="movies.length >= 1 && !isFetching">
+  <app-movie-item
+    *ngFor="
+      let movieItem of movies
+        | paginate
+          : { itemsPerPage: 12, currentPage: page, totalItems: totalLength };
+      let i = index
+    "
+    [movie]="movieItem"
+    [index]="12 * (page - 1) + i"
+  >
+  </app-movie-item>
+  <div class="col-lg-12" style="margin-top: 30px">
+    <pagination-controls
+      class="text-center my-pagination ngx-pagination"
+      (pageChange)="page = $event"
+    >
+    </pagination-controls>
+  </div>
+</div>
+<p
+  *ngIf="isFetching"
+  style="margin-bottom: 15px; color: white; font-size: 25px"
+>
+  Loading...
+</p>

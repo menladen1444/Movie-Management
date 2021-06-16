@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col-sm-12">
+            <button class="button" (click)="onNewCategory()">THÊM MỚI</button>
+        </div>
+    </div>
+    <div class="col-sm-12" style="background-color: #0f151a;border-radius: 15px;margin-bottom: 15px;padding: 10px;">
+        <p style="color: white;margin-left: 10px;" *ngIf="categories.length < 1 && !isFetching">Danh sách trống!</p>
+        <div *ngIf="categories.length >= 1 && !isFetching">
+            <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 40px;margin-top: 30px;color: white;">DANH SÁCH THỂ LOẠI</h1>
+            <app-category-item *ngFor="let categoryItem of categories; let i = index" [category]="categoryItem" [index]="i">
+            </app-category-item>
+        </div>
+    </div>
+    <p *ngIf="isFetching" style="margin-bottom: 15px;color: white;font-size: 25px;">Loading...</p>
+</div>
+<router-outlet></router-outlet>

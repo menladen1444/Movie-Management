@@ -1,0 +1,28 @@
+.form-control{
+    height: 40px;
+    background-color: #10171c;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #d2dce4;
+    font-family: 'Yanone Kaffeesatz', sans-serif
+
+}
+.form-group{
+    color: #667079;
+}
+
+:host {
+  background: #182229;
+  color: #fff;
+  position: fixed;
+  right: auto;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 21%;
+  min-width: 250px;
+  z-index: 9999;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+ 

@@ -1,0 +1,26 @@
+<h1 align="center" style="font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 30px;margin-top: 30px;color: white;"> THÔNG TIN THỂ LOẠI</h1>
+<div class="row" style="padding:30px 5%">
+    <div class="col-sm-12">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Tên thể loại</label>
+                                <input type="text" name="name" placeholder="nhập tên thể loại..." id="name" formControlName="name" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" align="center" style="margin-top: 20px">
+                    <button type="submit" class="btn btn-success mr-3" style="font-weight: bolder;border:none;border-radius: 5px;font-size: 15px;padding: 5px 20px;" [disabled]="!categoryForm.valid">Lưu</button>
+                    <button type="button" style="font-weight: bolder; color: #32536c; border-radius: 5px;border: 2px solid #32536c; background-color:transparent;font-size: 15px;padding: 5px 20px;" (click)="onCancel()">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

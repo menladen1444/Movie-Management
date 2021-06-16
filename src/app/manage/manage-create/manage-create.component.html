@@ -1,0 +1,85 @@
+<h1 align="center" style="font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 40px;margin-top: 30px;color: white;"> THÔNG TIN PHIM</h1>
+<div class="row" style="padding:30px 15%">
+    <div class="col-sm-12">
+        <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" *ngIf="!isFetching">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Tên</label>
+                                <input type="text" name="name" id="name" formControlName="name" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="nation">Quốc gia</label>
+                                <!-- <input type="text" id="nation" formControlName="nation" class="form-control"> -->
+                                <select id="nation" formControlName="nation" class="form-control">
+                                    <option>Chọn quốc gia</option>
+                                    <option [value]="nation.name" *ngFor="let nation of nations">{{nation.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="duration">Thời lượng</label>
+                                <input type="number" id="duration" formControlName="duration" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="year">Năm phát hành</label>
+                                <input type="number" name="year" id="year" formControlName="year" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="category">Thể loại</label>
+                                <!-- <input type="text" id="category" formControlName="category" class="form-control"> -->
+                                <select id="category" formControlName="category" class="form-control">
+                                    <option>Chọn thể loại</option>
+                                    <option [value]="category.name" *ngFor="let category of categories">{{category.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="imagePath">Liên kết hình ảnh</label>
+                                <input type="text" id="imagePath" formControlName="imagePath" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="description">Mô tả</label>
+                                <textarea style="height: 190px" type="text" id="description"
+                                    formControlName="description" class="form-control" rows="6"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="!isFetching">
+                <div class="col-sm-12" align="center" style="margin-top: 20px">
+                    <button type="submit" class="btn btn-success mr-3" style="font-size: 15px;padding: 5px 20px;"
+                        [disabled]="!movieForm.valid">LƯU</button>
+                    <button type="button" class="btn btn-danger" style="font-size: 15px;padding: 5px 20px;"
+                        (click)="onCancel()">ĐÓNG</button>
+                </div>
+            </div>
+        </form>
+        <p *ngIf="isFetching" style="margin-bottom: 15px;color: white;font-size: 25px;">Loading...</p>
+    </div>
+</div>

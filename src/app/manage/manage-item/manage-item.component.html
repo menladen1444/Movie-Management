@@ -1,0 +1,17 @@
+<a [routerLink]="index" routerLinkActive="active" style="padding: 10px;padding-bottom:10px" class="col-xs-6">
+    <div style="background-color: transparent;padding: 3px;border:1px solid transparent;padding-left: 20px;">
+        <div class="row">
+            <div class="col-lg-1" style="padding: 0">
+                <img src="{{ movie.imagePath }}" class="card-img-top" style="border-radius:5px">
+            </div>
+            <div class="col-lg-10" style=" padding-left: 15px;padding-top: 3px;">
+                <div style=" padding-left: 10px">
+                    <h4 style="color:#115266; font-size:15px; margin:0px; padding:0px; font-weight:bolder"> 
+                        {{ movie.name }} ({{ movie.year }}) </h4>
+                    <p style="font-size: 14px;color:#2e3a43;margin: 0;">Quốc gia: {{ movie.nation }}</p>
+                    <p style="color:#2e3a43;font-size:14px;padding-top: 0;">Thời lượng: {{ movie.duration }} phút</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
